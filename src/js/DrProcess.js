@@ -35,8 +35,10 @@ export class DrProcess{
   assembleDr(dr){
     $('.dr-list').append(
       `<div class="dr-card">
-        <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
-        <img src='${dr.profile.image_url}'>
+        <div class="profile">
+          <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
+          <img src='${dr.profile.image_url}'>
+        </div>
         <div class="practice">
           ${this.handleSpecialties(dr.specialties)}
           <p>${this.handleUnfef(dr.practices[0].visit_address.street)}</p>

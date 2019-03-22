@@ -1,11 +1,36 @@
-.dr-list{
+@mixin mQ ($min) {
+  @media screen and (min-width:$min){
+    @content;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
   width:100%;
+}
+
+.dr-list{
   display:grid;
-  grid-template-columns:45vw 45vw;
+  justify-content: center;
+  grid-template-columns:95vw;
   grid-gap:2vw;
+  @include mQ (500px){
+    grid-template-columns: 45vw 45vw;
+  }
+  @include mQ (800px){
+    grid-template-columns: 30vw 30vw 30vw;
+  }
+  @include mQ (1100px){
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+  }
 }
 
 .dr-card{
   background-color:skyblue;
-  text-align:center;
+  display:flex;
+  justify-content: space-around;
 }
