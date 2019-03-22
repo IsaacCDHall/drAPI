@@ -73,6 +73,9 @@ $(document).ready(function(){
       parsedData.data.forEach(function(dr){
         assembleDr(dr);
       });
+      if(parsedData.data.length===0){
+        $('.dr-list').text("No results match those chriteria");
+      }
     });
   });
 });
