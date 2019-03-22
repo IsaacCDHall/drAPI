@@ -21,14 +21,26 @@ const excludeUndefWebsite=(website)=>{
   } else return "";
 }
 
-const assembleDr=(dr)=>{
+const handleSpecialties=(specialties)=>{
+  if(specialties!==undefined){
+    let specialString="";
+    specialties.forEach((sp)=>{
+      specialString+=`<h4>${sp.name}</h4>`;
+    });
+    return specialString;
+  } else return "";
+}
 
+const assembleDr=(dr)=>{
   $('.dr-list').append(`
     <div class="dr-card">
       <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
-      <h4>${dr.specialties[0].name}</h4>
       <img src='${dr.profile.image_url}'>
       <div class="practice">
+        ${handleSpecialties(dr.specialties)}
+        <p>${excludeUndef(dr.practices[0].visit_address.street)}</p>
+        <p>${excludeUndef(dr.practices[0].visit_address.street2)}</p>
+        <p>${excludeUndef(dr.practices[0].visit_address.city)+", "+excludeUndef(dr.practices[0].visit_address.state)+", "+ excludeUndef(dr.practices[0].visit_address.zip)}</p>
         <p>${newPatients(dr.practices[0].accepts_new_patients)}</p>
         <p>${excludeUndef(dr.practices[0].phones[0].number)}</p>
         <p>${excludeUndef(dr.practices[0].email)}</p>
