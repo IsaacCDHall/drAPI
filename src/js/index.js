@@ -5,5 +5,8 @@ import {DrCall} from './Drcall.js';
 $(document).ready(function(){
   const drSearch = new DrCall();
   const drList= drSearch.getDrs();
-  console.log(drList);
+  drList.then(function(response){
+    const parsedData= JSON.parse(response);
+    console.log(parsedData);
+  })
 });
