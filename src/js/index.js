@@ -15,11 +15,16 @@ const excludeUndef=(parameter)=>{
     return parameter
   } else return "";
 }
+const excludeUndefWebsite=(website)=>{
+  if(website!==undefined){
+    return `<p><a href='${website}'>Website</a></p>`
+  } else return "";
+}
 
 const assembleDr=(dr)=>{
 
   $('.dr-list').append(`
-    <div class="drCard">
+    <div class="dr-card">
       <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
       <h4>${dr.specialties[0].name}</h4>
       <img src='${dr.profile.image_url}'>
@@ -27,9 +32,8 @@ const assembleDr=(dr)=>{
         <p>${newPatients(dr.practices[0].accepts_new_patients)}</p>
         <p>${excludeUndef(dr.practices[0].phones[0].number)}</p>
         <p>${excludeUndef(dr.practices[0].email)}</p>
-        <p>${excludeUndef(dr.practices[0].website)}</p>
+        ${excludeUndefWebsite(dr.practices[0].website)}
       </div>
-      <p class="bio">${dr.profile.bio}<p>
     </div>
     `);
 }

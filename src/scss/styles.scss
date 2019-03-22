@@ -1,0 +1,11 @@
+.dr-list{
+  width:100%;
+  display:grid;
+  grid-template-columns:30% 30% 30%;
+  grid-gap:1.5%;
+}
+
+.dr-card{
+  background-color:skyblue;
+  text-align:center;
+}
