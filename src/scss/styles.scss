@@ -24,9 +24,6 @@ body{
   @include mQ (800px){
     grid-template-columns: 30vw 30vw 30vw;
   }
-  @include mQ (1100px){
-    grid-template-columns: 20vw 20vw 20vw 20vw;
-  }
 }
 
 .dr-card{
@@ -43,18 +40,16 @@ body{
 }
 
 #searchForm{
-  display:flex;
-  flex-direction:column;
-  align-items: center;
   width:500px;
   margin: 20px;
   input, select {
-    width: 500px;
+    max-width: 500px;
   }
   div{
     margin-top:15px;
   }
   button{
+    margin-top:15px;
     background-color:white;
     border:2px solid skyblue;
     border-radius:10px;

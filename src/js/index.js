@@ -28,7 +28,7 @@ $(document).ready(function(){
         drProcessor.assembleDr(dr);
       });
       if(parsedData.data.length===0){
-        $('.dr-list').text("No results match those chriteria");
+        $('#error-msg').text("No Matching Results");
       }
     });
   });
