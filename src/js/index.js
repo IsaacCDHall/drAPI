@@ -10,7 +10,14 @@ const newPatients=(patients)=>{
   }
 }
 
+const excludeUndef=(parameter)=>{
+  if(parameter!==undefined){
+    return parameter
+  } else return "";
+}
+
 const assembleDr=(dr)=>{
+
   $('.dr-list').append(`
     <div class="drCard">
       <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
@@ -18,9 +25,9 @@ const assembleDr=(dr)=>{
       <img src='${dr.profile.image_url}'>
       <div class="practice">
         <p>${newPatients(dr.practices[0].accepts_new_patients)}</p>
-        <p>${dr.practices[0].phones[0].number}</p>
-        <p>${dr.practices[0].email}</p>
-        <p>${dr.practices[0].website}</p>
+        <p>${excludeUndef(dr.practices[0].phones[0].number)}</p>
+        <p>${excludeUndef(dr.practices[0].email)}</p>
+        <p>${excludeUndef(dr.practices[0].website)}</p>
       </div>
       <p class="bio">${dr.profile.bio}<p>
     </div>
