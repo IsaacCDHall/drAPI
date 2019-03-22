@@ -11,6 +11,7 @@
 
 body{
   width:100%;
+  background-color:skyblue;
 }
 
 .dr-list{
@@ -27,10 +28,12 @@ body{
 }
 
 .dr-card{
-  background-color:skyblue;
+  color:white;
+  background-color:steelblue;
   display:flex;
   justify-content: space-around;
-  padding:10px;
+  padding:15px;
+  border:1px solid white;
 }
 
 .flex-wrapper{
@@ -51,13 +54,14 @@ body{
   button{
     margin-top:15px;
     background-color:white;
-    border:2px solid skyblue;
+    border:2px solid steelblue;
     border-radius:10px;
     padding:10px;
     width:200px;
     &:hover{
+      color:white;
       transition:background-color 0.5s;
-      background-color:skyblue;
+      background-color:steelblue;
     }
   }
 }
