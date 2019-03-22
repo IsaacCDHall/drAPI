@@ -3,7 +3,7 @@ import $ from 'jquery';
 import {DrCall} from './Drcall.js';
 
 $(document).ready(function(){
-  const drSearch = new DrCall();
+  const drSearch = new DrCall("Jason");
   const drList= drSearch.getDrs();
   drList.then(function(response){
     const parsedData= JSON.parse(response);
