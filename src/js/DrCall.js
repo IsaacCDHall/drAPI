@@ -25,7 +25,7 @@ export class DrCall{
     if(this.status===200){
       resolve(myRequest.response)
     } else {
-      reject(console.log("there was an error!"))
+      reject(Error(myRequest.statusText))
     }
   }
   myRequest.open("GET",url,true);
