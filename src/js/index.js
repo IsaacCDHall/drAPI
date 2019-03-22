@@ -35,6 +35,7 @@ $(document).ready(function(){
         $('.dr-list').append(`
           <div class="drCard">
             <h2>${dr.profile.first_name+" "+dr.profile.last_name}</h2>
+            <h4>${dr.specialties[0].name}</h4>
             <img src='${dr.profile.image_url}'>
             <div class="practice">
               <p>${newPatients(dr.practices[0].accepts_new_patients)}</p>
